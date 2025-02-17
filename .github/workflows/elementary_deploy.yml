@@ -23,8 +23,16 @@ jobs:
       - name: Checkout dbt project
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+ 
+      - name: Install Elementary 0.16.1
+        run: pip install elementary==0.16.1
+
       - name: Run Elementary
-        uses: elementary-data/run-elementary-action@v1.8
+        uses: elementary-data/run-elementary-action@v1.12
         with:
           warehouse-type: snowflake # Type of warehouse to use (bigquery, snowflake, redshift, etc.)
           #adapter-version: 1.5.0 # The dbt-adapter version that should be used (If not provided the latest version will be used). 
