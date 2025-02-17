@@ -23,11 +23,6 @@ jobs:
       - name: Checkout dbt project
         uses: actions/checkout@v4
 
-      # Instalar la versión específica de Elementary
-      - name: Install specific Elementary version
-        run: |
-          pip install elementary==0.16.1
-
       - name: Run Elementary
         uses: elementary-data/run-elementary-action@v1.11
         with:
