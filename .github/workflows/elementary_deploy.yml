@@ -32,7 +32,14 @@ jobs:
           edr-command:
             edr report
               --file-path "report.html"
-                      
+            &&
+            edr send-report
+              --google-service-account-path "/tmp/gcs_keyfile.json"
+              --gcs-bucket-name "${{ secrets.GCS_BUCKET_NAME }}"
+              --update-bucket-website "true"
+
+          gcs-keyfile: ${{ secrets.GCS_KEYFILE }} # If using GCS, the content of its keyfile.
+
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
