@@ -33,8 +33,7 @@ jobs:
             edr report
               --file-path "report.html"
             &&
-            edr send-report
-              --google-service-account-path "/tmp/gcs_keyfile.json"
+            edr send-report              
               --gcs-bucket-name "${{ secrets.GCS_BUCKET_NAME }}"
               --update-bucket-website "true"
           
