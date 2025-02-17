@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout dbt project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Elementary
         uses: elementary-data/run-elementary-action@v1.11
@@ -40,14 +40,14 @@ jobs:
           gcs-keyfile: ${{ secrets.GCS_KEYFILE }} # If using GCS, the content of its keyfile.
 
       - name: Upload report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: report.html
           path: report.html
 
       - name: Upload log
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: edr.log
           path: edr.log
