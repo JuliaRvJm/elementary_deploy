@@ -26,10 +26,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.8'
  
       - name: Install Elementary
-        run: pip install "elementary<0.16.2"
+        run: pip index versions elementary
 
       - name: Run Elementary
         uses: elementary-data/run-elementary-action@v1.12
