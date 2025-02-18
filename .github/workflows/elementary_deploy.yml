@@ -35,7 +35,7 @@ jobs:
         uses: elementary-data/run-elementary-action@v1.12
         with:
           warehouse-type: snowflake # Type of warehouse to use (bigquery, snowflake, redshift, etc.)
-          #adapter-version: 1.5.0 # The dbt-adapter version that should be used (If not provided the latest version will be used). 
+          adapter-version: 1.5.0 # The dbt-adapter version that should be used (If not provided the latest version will be used). 
           profiles-yml: ${{ secrets.PROFILES_YML }} # Content of ~/.dbt/profiles.yml, should have an `elementary` profile.
           edr-command:
             edr report
